@@ -14,12 +14,26 @@ struct SingleList //Kiểu danh sách liên kết
     Node *pTail;
 };
 
+void Init (SingleList &list);
+Node *CreatNode (int x);
+bool IsEmpty (SingleList &list);
+void AddHead (SingleList &list, int value);
+void AddTail (SingleList &list, int value);
+int SizeOfList (SingleList &list);
+void AddMid (SingleList &list, int pos, int value);
+void printList (SingleList &list);
+
+int main ()
+{
+    // Update
+}
+
 void Init (SingleList &list) // Khởi tạo List mới = NULL
 {
     list.pHead = list.pTail = NULL;
 }
 
-Node *CreatNode (int x)
+Node *CreatNode (int x) // Tạo nốt mới
 {
     Node *pNode = (Node*) malloc (sizeof (Node)); // Cấp phát vùng nhớ cho Node
     if (pNode == NULL)
@@ -49,7 +63,7 @@ void AddHead (SingleList &list, int value) // Chèn vào đầu danh sách
     }
 }
 
-void AddTail (SingleList &list, int value) // Thêm Node mới
+void AddTail (SingleList &list, int value) // Thêm Node mới vào cuối danh sách
 {
     Node *new_node = CreatNode (value);
     if (IsEmpty (list))
@@ -61,7 +75,7 @@ void AddTail (SingleList &list, int value) // Thêm Node mới
     }
 }
 
-int SizeOfList (SingleList &list)
+int SizeOfList (SingleList &list) // Hàm lấy kích thước danh sách
 {
     Node *pTmp = list.pHead;
     int Size = 0;
@@ -73,7 +87,7 @@ int SizeOfList (SingleList &list)
     return Size;
 }
 
-void AddMid (SingleList &list, int pos, int value)
+void AddMid (SingleList &list, int pos, int value) // Hàm chèn vào vị trí bất kì
 {
     if (pos < 0 || pos >= SizeOfList(list))
     {
@@ -103,7 +117,7 @@ void AddMid (SingleList &list, int pos, int value)
     }
 }
 
-void printList (SingleList &list)
+void printList (SingleList &list) // Lấy danh sách in ra màn hình
 {
     Node *pTmp = list.pHead;
     if (pTmp == NULL)
@@ -116,9 +130,4 @@ void printList (SingleList &list)
         cout << pTmp->data;
         pTmp = pTmp->pNext;
     }
-}
-
-int main ()
-{
-    
 }
