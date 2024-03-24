@@ -25,7 +25,7 @@ void printList (SingleList &list);
 
 int main ()
 {
-    // Update
+    // update.
 }
 
 void Init (SingleList &list) // Khởi tạo List mới = NULL
