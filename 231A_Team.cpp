@@ -5,9 +5,9 @@ int run ();
 
 int main () 
 {
-    int n; cin >> n;
+    int N; cin >> N;
     int count = 0;
-    while (n--)
+    while (N--)
     {
         if (run () > 0)
             count++;
